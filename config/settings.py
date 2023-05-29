@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'compressor',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -126,7 +127,14 @@ BASE_DIR/'static',
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# 
+# Commpress Configure
 COMPRESS_ROOT = BASE_DIR / 'static'
 COMPRESS_ENABLED = True
 STATICFILES_FINDERS = ('compressor.finders.CompressorFinder',)
+
+# Django REST Framework
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    ]
+}
