@@ -10,9 +10,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Django + Tailwind CSS + Flowbite</title>
 
-    {% comment %} {% compress css %} {% endcomment %}
-    <link rel="stylesheet" href="/src/css/style.css">
-    {% comment %} {% endcompress %} {% endcomment %}
+    {% compress css %}
+    <link rel="stylesheet" href="{% static 'web/css/style.css' %}">
+    {% endcompress %}
 
 </head>
 
